@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(210 25% 7.8431%);
+  --card: hsl(180 6.6667% 97.0588%);
+  --card-foreground: hsl(210 25% 7.8431%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 25% 7.8431%);
+  --primary: hsl(203.8863 88.2845% 53.1373%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 25% 7.8431%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 1.9608% 90%);
+  --muted-foreground: hsl(210 25% 7.8431%);
+  --accent: hsl(211.5789 51.3514% 92.7451%);
+  --accent-foreground: hsl(203.8863 88.2845% 53.1373%);
+  --destructive: hsl(356.3033 90.5579% 54.3137%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(201.4286 30.4348% 90.9804%);
+  --input: hsl(200 23.0769% 97.4510%);
+  --ring: hsl(202.8169 89.1213% 53.1373%);
+  --chart-1: hsl(203.8863 88.2845% 53.1373%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(180 6.6667% 97.0588%);
+  --sidebar-foreground: hsl(210 25% 7.8431%);
+  --sidebar-primary: hsl(203.8863 88.2845% 53.1373%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(211.5789 51.3514% 92.7451%);
+  --sidebar-accent-foreground: hsl(203.8863 88.2845% 53.1373%);
+  --sidebar-border: hsl(205.0000 25.0000% 90.5882%);
+  --sidebar-ring: hsl(202.8169 89.1213% 53.1373%);
+  --font-sans: 'Space Grotesk', 'Geist', Inter, sans-serif;
+  --font-serif: 'Space Grotesk', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  
+  /* Dark theme custom colors */
+  --dark-primary: hsl(0 0% 3.9216%);
+  --dark-secondary: hsl(0 0% 10.1961%);
+  --dark-tertiary: hsl(0 0% 16.4706%);
+  --electric-blue: hsl(192.9412 100% 50%);
+  --neon-green: hsl(152.9412 100% 50%);
+  --purple-primary: hsl(248.1176 69.0141% 58.6275%);
+  --purple-secondary: hsl(330.4348 76.9231% 60.3922%);
+  --slate-850: hsl(215 28% 12%);
+}
+
+.dark {
+  --background: hsl(0 0% 3.9216%);
+  --foreground: hsl(200 6.6667% 91.1765%);
+  --card: hsl(0 0% 10.1961%);
+  --card-foreground: hsl(0 0% 85.0980%);
+  --popover: hsl(0 0% 3.9216%);
+  --popover-foreground: hsl(200 6.6667% 91.1765%);
+  --primary: hsl(192.9412 100% 50%);
+  --primary-foreground: hsl(0 0% 3.9216%);
+  --secondary: hsl(195.0000 15.3846% 94.9020%);
+  --secondary-foreground: hsl(210 25% 7.8431%);
+  --muted: hsl(0 0% 9.4118%);
+  --muted-foreground: hsl(210 3.3898% 46.2745%);
+  --accent: hsl(0 0% 16.4706%);
+  --accent-foreground: hsl(192.9412 100% 50%);
+  --destructive: hsl(356.3033 90.5579% 54.3137%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 5.2632% 14.9020%);
+  --input: hsl(0 0% 16.4706%);
+  --ring: hsl(192.9412 100% 50%);
+  --chart-1: hsl(192.9412 100% 50%);
+  --chart-2: hsl(152.9412 100% 50%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(330.4348 76.9231% 60.3922%);
+  --sidebar: hsl(0 0% 10.1961%);
+  --sidebar-foreground: hsl(0 0% 85.0980%);
+  --sidebar-primary: hsl(192.9412 100% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 3.9216%);
+  --sidebar-accent: hsl(0 0% 16.4706%);
+  --sidebar-accent-foreground: hsl(192.9412 100% 50%);
+  --sidebar-border: hsl(210 5.2632% 14.9020%);
+  --sidebar-ring: hsl(192.9412 100% 50%);
+  --font-sans: 'Space Grotesk', 'Geist', Inter, sans-serif;
+  --font-serif: 'Space Grotesk', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00), 0px 1px 2px -1px hsl(192.9412 100% 50% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00), 0px 1px 2px -1px hsl(192.9412 100% 50% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00), 0px 2px 4px -1px hsl(192.9412 100% 50% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00), 0px 4px 6px -1px hsl(192.9412 100% 50% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00), 0px 8px 10px -1px hsl(192.9412 100% 50% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(192.9412 100% 50% / 0.00);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-dark-primary dark:bg-dark-primary text-white dark:text-white;
+    font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1;
+    font-variant-ligatures: common-ligatures;
+    letter-spacing: -0.025em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced typography for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'Geist', Inter, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+  }
+
+  /* Tech-focused monospace for code elements */
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Geist Mono', 'Fira Code', monospace;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply bg-dark-tertiary bg-opacity-25 backdrop-blur-md border border-white border-opacity-10;
+  }
+
+  .section-transition {
+    background: linear-gradient(180deg, 
+      transparent 0%, 
+      rgba(15, 23, 42, 0.3) 20%, 
+      rgba(15, 23, 42, 0.5) 50%, 
+      rgba(15, 23, 42, 0.3) 80%, 
+      transparent 100%);
+  }
+
+  @keyframes float-particles {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .floating-particles {
+    animation: float-particles 6s ease-in-out infinite;
+  }
+
+  .floating-particles:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .floating-particles:nth-child(3) {
+    animation-delay: -4s;
+  }
+  
+  .glow-electric {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  }
+  
+  .glow-neon {
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+  }
+  
+  .text-gradient-electric {
+    background: linear-gradient(135deg, #00D4FF 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Space Grotesk', 'Geist', Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  }
+  
+  .text-gradient-neon {
+    background: linear-gradient(135deg, #00FF88 0%, #00D4FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Space Grotesk', 'Geist', Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+  }
+  
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Space Grotesk', 'Geist', Inter, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply transform -translate-y-2;
+  }
+  
+  .timeline-line {
+    background: linear-gradient(180deg, #00D4FF 0%, #8B5CF6 50%, #EC4899 100%);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio - John Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    'dark-primary': '#0A0A0A',
+                    'dark-secondary': '#1A1A1A',
+                    'dark-tertiary': '#2A2A2A',
+                    'electric-blue': '#00D4FF',
+                    'neon-green': '#00FF88',
+                    'purple-primary': '#8B5CF6',
+                    'purple-secondary': '#EC4899',
+                },
+                backgroundImage: {
+                    'gradient-electric': 'linear-gradient(135deg, #00D4FF 0%, #8B5CF6 100%)',
+                    'gradient-neon': 'linear-gradient(135deg, #00FF88 0%, #00D4FF 100%)',
+                    'gradient-purple': 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)',
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        .glassmorphism {
+            background: rgba(42, 42, 42, 0.25);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glow-electric {
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .glow-neon {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+        }
+        
+        .glow-purple {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        .text-gradient-electric {
+            background: linear-gradient(135deg, #00D4FF 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-gradient-neon {
+            background: linear-gradient(135deg, #00FF88 0%, #00D4FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .timeline-line {
+            background: linear-gradient(180deg, #00D4FF 0%, #8B5CF6 50%, #EC4899 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-primary text-white font-inter scroll-smooth">
+    
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full z-50 glassmorphism">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="text-gradient-electric">John.dev</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-electric-blue transition-colors duration-300" data-nav="home">Home</a>
+                    <a href="#about" class="hover:text-electric-blue transition-colors duration-300" data-nav="about">About</a>
+                    <a href="#experience" class="hover:text-electric-blue transition-colors duration-300" data-nav="experience">Experience</a>
+                    <a href="#education" class="hover:text-electric-blue transition-colors duration-300" data-nav="education">Education</a>
+                    <a href="#projects" class="hover:text-electric-blue transition-colors duration-300" data-nav="projects">Projects</a>
+                    <a href="#contact" class="hover:text-electric-blue transition-colors duration-300" data-nav="contact">Contact</a>
+                </div>
+                <button class="md:hidden text-white" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Mobile Menu -->
+    <!-- @COMPONENT: MobileMenu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 glassmorphism transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
+            <a href="#home" class="hover:text-electric-blue transition-colors duration-300 mobile-nav-link">Home</a>
+            <a href="#about" class="hover:text-electric-blue transition-colors duration-300 mobile-nav-link">About</a>
+            <a href="#experience" class="hover:text-electric-blue transition-colors duration-300 mobile-nav-link">Experience</a>
+            <a href="#education" class="hover:text-electric-blue transition-colors duration-300 mobile-nav-link">Education</a>
+            <a href="#projects" class="hover:text-electric-blue transition-colors duration-300 mobile-nav-link">Projects</a>
+            <a href="#contact" class="hover:text-electric-blue transition-colors duration-300 mobile-nav-link">Contact</a>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: MobileMenu -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background gradient animation -->
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-primary via-dark-secondary to-dark-tertiary"></div>
+        <div class="absolute inset-0 bg-gradient-electric opacity-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-5xl lg:text-7xl font-black mb-6 leading-tight">
+                        <span class="block text-white">Hello, I'm</span>
+                        <span class="block text-gradient-electric">John Developer</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-gray-300 mb-8 font-light">
+                        Full Stack Developer & UI/UX Designer crafting exceptional digital experiences
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="bg-gradient-electric text-dark-primary px-8 py-4 rounded-xl font-semibold hover:scale-105 transition-all duration-300 glow-electric">
+                            View My Work
+                        </button>
+                        <button class="glassmorphism px-8 py-4 rounded-xl font-semibold hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                            <i class="fas fa-download mr-2"></i>Download CV
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <!-- Professional workspace setup photo -->
+                    <div class="relative float-animation">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                             alt="Professional developer workspace with multiple monitors and coding setup" 
+                             class="rounded-2xl glassmorphism p-4 glow-electric hover-lift" 
+                             data-mock-image="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-electric-blue"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: AboutSection -->
+    <section id="about" class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-4">
+                    <span class="text-gradient-neon">About Me</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Passionate about creating innovative solutions that blend cutting-edge technology with exceptional user experience
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="glassmorphism rounded-2xl p-8 hover-lift">
+                        <h3 class="text-2xl font-bold text-gradient-electric mb-4">My Journey</h3>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            With over 5 years of experience in web development and design, I've had the privilege of working with 
+                            startups and established companies to bring their digital visions to life. My expertise spans across 
+                            frontend and backend technologies, with a keen eye for user experience design.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 glassmorphism rounded-xl">
+                                <div class="text-2xl font-bold text-electric-blue">50+</div>
+                                <div class="text-sm text-gray-400">Projects Completed</div>
+                            </div>
+                            <div class="text-center p-4 glassmorphism rounded-xl">
+                                <div class="text-2xl font-bold text-neon-green">5+</div>
+                                <div class="text-sm text-gray-400">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Professional workspace setup photo -->
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                         alt="Modern workspace with laptop and design tools" 
+                         class="rounded-xl glassmorphism p-3 hover-lift glow-neon" 
+                         data-mock-image="true" />
+                    
+                    <!-- Creative design elements photo -->
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                         alt="Creative design workspace with colorful UI mockups" 
+                         class="rounded-xl glassmorphism p-3 hover-lift glow-purple mt-8" 
+                         data-mock-image="true" />
+                    
+                    <!-- Professional workspace setup photo -->
+                    <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                         alt="Professional development setup with multiple screens" 
+                         class="rounded-xl glassmorphism p-3 hover-lift glow-electric -mt-8" 
+                         data-mock-image="true" />
+                    
+                    <!-- Creative design elements photo -->
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300" 
+                         alt="Modern UI design elements and color palettes" 
+                         class="rounded-xl glassmorphism p-3 hover-lift glow-neon" 
+                         data-mock-image="true" />
+                </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="mt-20">
+                <h3 class="text-3xl font-bold text-center mb-12 text-gradient-electric">Technical Skills</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Frontend Skills -->
+                    <div class="glassmorphism rounded-2xl p-6 hover-lift">
+                        <h4 class="text-xl font-semibold text-electric-blue mb-4">Frontend Development</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>React.js</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-20 h-2 bg-gradient-electric rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Vue.js</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-20 h-2 bg-gradient-neon rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>TypeScript</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-16 h-2 bg-gradient-purple rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Skills -->
+                    <div class="glassmorphism rounded-2xl p-6 hover-lift">
+                        <h4 class="text-xl font-semibold text-neon-green mb-4">Backend Development</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>Node.js</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-20 h-2 bg-gradient-neon rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Python</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-18 h-2 bg-gradient-electric rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>PostgreSQL</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-16 h-2 bg-gradient-purple rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Design Skills -->
+                    <div class="glassmorphism rounded-2xl p-6 hover-lift">
+                        <h4 class="text-xl font-semibold text-purple-primary mb-4">Design & Tools</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span>Figma</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-20 h-2 bg-gradient-purple rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Adobe XD</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-18 h-2 bg-gradient-electric rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>UI/UX Design</span>
+                                <div class="w-24 h-2 bg-dark-tertiary rounded-full">
+                                    <div class="w-20 h-2 bg-gradient-neon rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Experience Section -->
+    <!-- @COMPONENT: ExperienceSection -->
+    <section id="experience" class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-4">
+                    <span class="text-gradient-electric">Experience</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    My professional journey through innovative companies and exciting projects
+                </p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line rounded-full"></div>
+                    
+                    <!-- Experience Items -->
+                    <!-- @MAP: experiences.map(experience => ( -->
+                    
+                    <!-- Experience 1 -->
+                    <div class="relative mb-12" data-mock="true" data-bind="experience[0]">
+                        <div class="flex items-center justify-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-electric rounded-full glow-electric z-10"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="md:text-right md:pr-8">
+                                <div class="glassmorphism rounded-2xl p-6 hover-lift">
+                                    <div class="text-electric-blue font-semibold mb-1">2022 - Present</div>
+                                    <h3 class="text-2xl font-bold mb-2">Senior Full Stack Developer</h3>
+                                    <h4 class="text-lg text-gradient-neon mb-4">TechCorp Solutions</h4>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        Led development of enterprise-level web applications using React, Node.js, and cloud technologies. 
+                                        Managed a team of 5 developers and increased application performance by 40%.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded-full text-sm">React</span>
+                                        <span class="px-3 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded-full text-sm">Node.js</span>
+                                        <span class="px-3 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded-full text-sm">AWS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:pl-8"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="relative mb-12" data-mock="true" data-bind="experience[1]">
+                        <div class="flex items-center justify-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-neon rounded-full glow-neon z-10"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div></div>
+                            <div class="md:pl-8">
+                                <div class="glassmorphism rounded-2xl p-6 hover-lift">
+                                    <div class="text-neon-green font-semibold mb-1">2020 - 2022</div>
+                                    <h3 class="text-2xl font-bold mb-2">Frontend Developer</h3>
+                                    <h4 class="text-lg text-gradient-electric mb-4">StartupXYZ</h4>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        Developed responsive web applications and improved user experience across multiple products. 
+                                        Collaborated with design team to implement pixel-perfect interfaces.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded-full text-sm">Vue.js</span>
+                                        <span class="px-3 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded-full text-sm">SASS</span>
+                                        <span class="px-3 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded-full text-sm">Figma</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 3 -->
+                    <div class="relative mb-12" data-mock="true" data-bind="experience[2]">
+                        <div class="flex items-center justify-center">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-purple rounded-full glow-purple z-10"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="md:text-right md:pr-8">
+                                <div class="glassmorphism rounded-2xl p-6 hover-lift">
+                                    <div class="text-purple-primary font-semibold mb-1">2019 - 2020</div>
+                                    <h3 class="text-2xl font-bold mb-2">Junior Web Developer</h3>
+                                    <h4 class="text-lg text-gradient-neon mb-4">WebAgency Pro</h4>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        Started my professional journey building websites for clients using modern web technologies. 
+                                        Learned best practices in web development and client communication.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded-full text-sm">JavaScript</span>
+                                        <span class="px-3 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded-full text-sm">PHP</span>
+                                        <span class="px-3 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded-full text-sm">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ExperienceSection -->
+
+    <!-- Education Section -->
+    <!-- @COMPONENT: EducationSection -->
+    <section id="education" class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-4">
+                    <span class="text-gradient-neon">Education</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Academic foundation and continuous learning journey
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Formal Education -->
+                <div class="glassmorphism rounded-2xl p-8 hover-lift">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-electric rounded-full flex items-center justify-center mx-auto mb-4 glow-electric">
+                            <i class="fas fa-graduation-cap text-2xl text-dark-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient-electric">Formal Education</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-electric-blue pl-6" data-mock="true">
+                            <div class="text-electric-blue font-semibold">2015 - 2019</div>
+                            <h4 class="text-xl font-bold mb-2">Bachelor of Computer Science</h4>
+                            <p class="text-gray-400 mb-2">University of Technology</p>
+                            <p class="text-gray-300">
+                                Specialized in software engineering and web development. Graduated with honors.
+                            </p>
+                        </div>
+                        
+                        <div class="border-l-4 border-neon-green pl-6" data-mock="true">
+                            <div class="text-neon-green font-semibold">2013 - 2015</div>
+                            <h4 class="text-xl font-bold mb-2">Associate in Web Development</h4>
+                            <p class="text-gray-400 mb-2">Community College</p>
+                            <p class="text-gray-300">
+                                Foundation in web technologies, database management, and programming fundamentals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications & Learning -->
+                <div class="glassmorphism rounded-2xl p-8 hover-lift">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-neon rounded-full flex items-center justify-center mx-auto mb-4 glow-neon">
+                            <i class="fas fa-certificate text-2xl text-dark-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gradient-neon">Certifications</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="glassmorphism rounded-xl p-4" data-mock="true">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-electric rounded-full flex items-center justify-center">
+                                    <i class="fab fa-aws text-dark-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">AWS Certified Developer</h4>
+                                    <p class="text-gray-400 text-sm">Amazon Web Services • 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glassmorphism rounded-xl p-4" data-mock="true">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-neon rounded-full flex items-center justify-center">
+                                    <i class="fab fa-google text-dark-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Google UX Design Certificate</h4>
+                                    <p class="text-gray-400 text-sm">Google • 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glassmorphism rounded-xl p-4" data-mock="true">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-purple rounded-full flex items-center justify-center">
+                                    <i class="fab fa-react text-dark-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">React Developer Certification</h4>
+                                    <p class="text-gray-400 text-sm">Meta • 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glassmorphism rounded-xl p-4" data-mock="true">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-electric rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code text-dark-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Full Stack Web Development</h4>
+                                    <p class="text-gray-400 text-sm">freeCodeCamp • 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: EducationSection -->
+
+    <!-- Projects Section -->
+    <!-- @COMPONENT: ProjectsSection -->
+    <section id="projects" class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-4">
+                    <span class="text-gradient-purple">Featured Projects</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Showcasing my latest work and innovative solutions
+                </p>
+            </div>
+            
+            <!-- Project Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                
+                <!-- Project 1 -->
+                <div class="glassmorphism rounded-2xl overflow-hidden hover-lift glow-electric" data-mock="true">
+                    <!-- Modern tech project photo -->
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Modern e-commerce web application interface" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gradient-electric">E-Commerce Platform</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Full-stack e-commerce solution with React frontend, Node.js backend, and payment integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded text-xs">React</span>
+                            <span class="px-2 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded text-xs">MongoDB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-gradient-electric text-dark-primary py-2 px-4 rounded-lg text-sm font-semibold hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </button>
+                            <button class="glassmorphism py-2 px-4 rounded-lg text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glassmorphism rounded-2xl overflow-hidden hover-lift glow-neon" data-mock="true">
+                    <!-- Modern tech project photo -->
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Task management application dashboard" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gradient-neon">Task Management App</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Collaborative task management tool with real-time updates and team collaboration features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded text-xs">Vue.js</span>
+                            <span class="px-2 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded text-xs">Socket.io</span>
+                            <span class="px-2 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded text-xs">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-gradient-neon text-dark-primary py-2 px-4 rounded-lg text-sm font-semibold hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </button>
+                            <button class="glassmorphism py-2 px-4 rounded-lg text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glassmorphism rounded-2xl overflow-hidden hover-lift glow-purple" data-mock="true">
+                    <!-- Modern tech project photo -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Data visualization dashboard with charts and graphs" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gradient-purple">Analytics Dashboard</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Advanced analytics dashboard with interactive charts and real-time data visualization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded text-xs">D3.js</span>
+                            <span class="px-2 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded text-xs">Python</span>
+                            <span class="px-2 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded text-xs">FastAPI</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-gradient-purple text-white py-2 px-4 rounded-lg text-sm font-semibold hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </button>
+                            <button class="glassmorphism py-2 px-4 rounded-lg text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="glassmorphism rounded-2xl overflow-hidden hover-lift glow-electric" data-mock="true">
+                    <!-- Modern tech project photo -->
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300" 
+                         alt="Mobile application interface design mockup" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gradient-electric">Mobile Banking App</h3>
+                        <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                            Secure mobile banking application with biometric authentication and transaction management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded text-xs">React Native</span>
+                            <span class="px-2 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded text-xs">Express</span>
+                            <span class="px-2 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded text-xs">Redis</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-gradient-electric text-dark-primary py-2 px-4 rounded-lg text-sm font-semibold hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </button>
+                            <button class="glassmorphism py-2 px-4 rounded-lg text-sm hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More projects can be added here -->
+                
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div class="text-center mt-12">
+                <button class="glassmorphism px-8 py-4 rounded-xl font-semibold hover:bg-white hover:bg-opacity-10 transition-all duration-300 glow-electric">
+                    <i class="fas fa-arrow-right mr-2"></i>View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-4">
+                    <span class="text-gradient-electric">Get In Touch</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to bring your ideas to life? Let's discuss your next project
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="glassmorphism rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gradient-neon mb-6">Let's Connect</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gradient-electric rounded-full flex items-center justify-center glow-electric">
+                                    <i class="fas fa-envelope text-dark-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">Email</p>
+                                    <p class="text-white font-semibold" data-mock="true" data-bind="user.email">john@developer.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gradient-neon rounded-full flex items-center justify-center glow-neon">
+                                    <i class="fas fa-phone text-dark-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">Phone</p>
+                                    <p class="text-white font-semibold" data-mock="true" data-bind="user.phone">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gradient-purple rounded-full flex items-center justify-center glow-purple">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400">Location</p>
+                                    <p class="text-white font-semibold" data-mock="true" data-bind="user.location">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Links -->
+                        <div class="mt-8 pt-8 border-t border-gray-700">
+                            <p class="text-gray-400 mb-4">Follow me on social media</p>
+                            <div class="flex gap-4">
+                                <a href="#" class="w-12 h-12 bg-gradient-electric rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 glow-electric">
+                                    <i class="fab fa-linkedin-in text-dark-primary"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-gradient-neon rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 glow-neon">
+                                    <i class="fab fa-github text-dark-primary"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-gradient-purple rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 glow-purple">
+                                    <i class="fab fa-twitter text-white"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 glassmorphism rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                                    <i class="fab fa-instagram text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gradient-electric mb-6">Send Message</h3>
+                    
+                    <!-- @FORM: ContactForm -->
+                    <form class="space-y-6" data-implementation="Should include form validation and email sending functionality">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 mb-2 font-medium">First Name</label>
+                                <input type="text" 
+                                       class="w-full px-4 py-3 bg-dark-tertiary border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-opacity-20 transition-all duration-300" 
+                                       placeholder="John" 
+                                       data-validation="required" />
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2 font-medium">Last Name</label>
+                                <input type="text" 
+                                       class="w-full px-4 py-3 bg-dark-tertiary border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-opacity-20 transition-all duration-300" 
+                                       placeholder="Doe" 
+                                       data-validation="required" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-medium">Email Address</label>
+                            <input type="email" 
+                                   class="w-full px-4 py-3 bg-dark-tertiary border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-opacity-20 transition-all duration-300" 
+                                   placeholder="john@example.com" 
+                                   data-validation="required,email" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-medium">Subject</label>
+                            <input type="text" 
+                                   class="w-full px-4 py-3 bg-dark-tertiary border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-opacity-20 transition-all duration-300" 
+                                   placeholder="Project Discussion" 
+                                   data-validation="required" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2 font-medium">Message</label>
+                            <textarea rows="6" 
+                                      class="w-full px-4 py-3 bg-dark-tertiary border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-opacity-20 transition-all duration-300 resize-none" 
+                                      placeholder="Tell me about your project..."
+                                      data-validation="required"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-electric text-dark-primary py-4 px-8 rounded-xl font-semibold hover:scale-105 transition-all duration-300 glow-electric"
+                                data-event="click:handleContactSubmit">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                    <!-- @END_FORM: ContactForm -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-dark-primary py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="text-gradient-electric">John.dev</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Full Stack Developer passionate about creating innovative digital solutions that make a difference.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-electric-blue transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-electric-blue transition-colors duration-300">About</a></li>
+                        <li><a href="#projects" class="hover:text-electric-blue transition-colors duration-300">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-electric-blue transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p data-mock="true" data-bind="user.email">john@developer.com</p>
+                        <p data-mock="true" data-bind="user.phone">+1 (555) 123-4567</p>
+                        <p data-mock="true" data-bind="user.location">San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
+                <p>&copy; 2024 John Developer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Project Modal (Hidden by default) -->
+    <!-- @COMPONENT: ProjectModal -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-black bg-opacity-75 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="glassmorphism rounded-2xl max-w-4xl w-full max-h-90vh overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-3xl font-bold text-gradient-electric" data-bind="selectedProject.title">Project Title</h3>
+                    <button id="close-modal" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <img src="" alt="Project screenshot" class="w-full rounded-xl mb-4" data-bind="selectedProject.image" data-mock-image="true" />
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-gradient-electric text-dark-primary py-3 px-6 rounded-lg font-semibold hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </button>
+                            <button class="glassmorphism py-3 px-6 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-gradient-neon">Project Overview</h4>
+                        <p class="text-gray-300 leading-relaxed mb-6" data-bind="selectedProject.description" data-mock="true">
+                            Detailed description of the project, its objectives, challenges faced, and solutions implemented.
+                        </p>
+                        
+                        <h4 class="text-xl font-semibold mb-4 text-gradient-purple">Technologies Used</h4>
+                        <div class="flex flex-wrap gap-2 mb-6" data-bind="selectedProject.technologies" data-mock="true">
+                            <span class="px-3 py-1 bg-electric-blue bg-opacity-20 text-electric-blue rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-neon-green bg-opacity-20 text-neon-green rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-purple-primary bg-opacity-20 text-purple-primary rounded-full text-sm">MongoDB</span>
+                        </div>
+                        
+                        <h4 class="text-xl font-semibold mb-4 text-gradient-electric">Key Features</h4>
+                        <ul class="space-y-2 text-gray-300" data-bind="selectedProject.features" data-mock="true">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-neon-green"></i>
+                                Responsive design
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-neon-green"></i>
+                                Real-time updates
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-neon-green"></i>
+                                User authentication
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: ProjectModal -->
+
+    <script>
+        (function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            
+            mobileMenuBtn?.addEventListener('click', () => {
+                mobileMenu.classList.toggle('translate-x-full');
+            });
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Project modal functionality
+            const projectModal = document.getElementById('project-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            
+            // TODO: Implement project modal opening functionality
+            // This would typically be triggered by clicking on project cards
+            
+            closeModalBtn?.addEventListener('click', () => {
+                projectModal.classList.add('hidden');
+                projectModal.classList.remove('flex');
+            });
+            
+            // Close modal when clicking outside
+            projectModal?.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    projectModal.classList.add('hidden');
+                    projectModal.classList.remove('flex');
+                }
+            });
+            
+            // Navigation active state (basic implementation)
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            function setActiveNav() {
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('text-electric-blue');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('text-electric-blue');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveNav);
+            
+            // Form validation placeholder
+            const contactForm = document.querySelector('form');
+            contactForm?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // TODO: Implement form validation and submission logic
+                console.log('Form submission prevented - implement validation logic');
+            });
+            
+            // Add some interactivity to skill bars (animate on scroll)
+            const skillBars = document.querySelectorAll('.w-20, .w-18, .w-16');
+            
+            function animateSkills() {
+                skillBars.forEach(bar => {
+                    const rect = bar.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        bar.style.animation = 'none';
+                        bar.offsetHeight; // Trigger reflow
+                        bar.style.animation = 'slideIn 1s ease-out forwards';
+                    }
+                });
+            }
+            
+            // Add CSS for skill animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { width: 0; }
+                    to { width: inherit; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            window.addEventListener('scroll', animateSkills);
+            animateSkills(); // Run once on load
+            
+        })();
+    </script>
+</body>
+</html>
